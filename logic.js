@@ -43,10 +43,10 @@ for (var i=0; i<cards.length; i++){
                             }, 1500 );*/
                             cartasArriba=0;
                             win++;
-                            }, 1000 );
                             if(win == 15){
                                 alert("GANASTE!");
                             }
+                            }, 1000 );
                         }else{                           
                             console.log("NO SON IGUALES :(");
                             delay(function(){
