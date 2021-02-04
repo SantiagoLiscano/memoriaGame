@@ -44,7 +44,8 @@ for (var i=0; i<cards.length; i++){
                             cartasArriba=0;
                             win++;
                             if(win == 15){
-                                alert("GANASTE!");
+                                alert("GANASTE! te tomó "+contadorJugadas+" jugadas conseguir las 15 parejas.");
+                                location.reload();
                             }
                             }, 1000 );
                         }else{                           
