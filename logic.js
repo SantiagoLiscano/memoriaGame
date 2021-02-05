@@ -1,6 +1,6 @@
 var cards = document.getElementsByClassName('card');
 var backCards = document.querySelectorAll('.card > .side:nth-child(2)');
-var infoArriba = document.getElementsByTagName('h1');
+var infoArriba = document.getElementsByTagName('h3');
 var backgrounds = ["1.png", "2.png", "3.png", "4.png", "5.png", "6.png", "7.png", "8.png", "9.png", "10.png", "15.png", "12.png", "14.png", "13.png", "11.png", "1.png", "2.png", "6.png", "4.png", "5.png", "3.png", "7.png", "8.png", "9.png", "11.png", "10.png", "12.png", "15.png", "14.png", "13.png"]
 var cartasArriba = 0;
 var firstCard;
@@ -8,12 +8,30 @@ var secondCard;
 var win=0;
 var contadorJugadas= 0;
 var contadorParejas = 0;
+function sound(src) {
+    this.sound = document.createElement("audio");
+    this.sound.src = src;
+    this.sound.setAttribute("preload", "auto");
+    this.sound.setAttribute("controls", "none");
+    this.sound.style.display = "none";
+    document.body.appendChild(this.sound);
+    this.play = function(){
+      this.sound.play();
+    }
+    this.stop = function(){
+      this.sound.pause();
+    }
+  };
+var cardFlipSound = new sound("cardFlipSound.mp3");
+var cardFlipSound2 = new sound("cardFlipSound.mp3");
+var winSound = new sound("winSound.mp3");
 backgrounds = shuffle(backgrounds);
 for (var i=0; i<cards.length; i++){
     cards[i].statusClick = 0;
     cards[i].addEventListener('click', function(){        
             if(this.statusClick == 0 && cartasArriba < 1){
                 this.classList.add('flip');
+                cardFlipSound.play();
                 this.statusClick = 1;
                 var style = this.childNodes[3].currentStyle || window.getComputedStyle(this.childNodes[3], false);
                         bi1 = style.backgroundImage.slice(27, -1).replace(/"/g, "");
@@ -23,6 +41,7 @@ for (var i=0; i<cards.length; i++){
                 cartasArriba++;
                 contadorJugadas++;                
                 this.classList.add('flip');
+                cardFlipSound2.play();
                 this.statusClick = 1;
                 var style = this.childNodes[3].currentStyle || window.getComputedStyle(this.childNodes[3], false);
                         bi2 = style.backgroundImage.slice(27, -1).replace(/"/g, "");
@@ -44,7 +63,7 @@ for (var i=0; i<cards.length; i++){
                             cartasArriba=0;
                             win++;
                             if(win == 15){
-                                alert("GANASTE! te tomó "+contadorJugadas+" jugadas conseguir las 15 parejas.");
+                                alert("YOU WON! it took you "+contadorJugadas+" plays to find the 15 pairs.");
                                 location.reload();
                             }
                             }, 1000 );
@@ -58,7 +77,8 @@ for (var i=0; i<cards.length; i++){
                             cartasArriba=0;                                
                             }, 1000 );
                         }
-                        infoArriba[0].innerText = "simple memoria game - Numero de Jugadas:" + contadorJugadas + " Parejas encontradas:" + contadorParejas + ".";
+                        infoArriba[0].innerText = "Number of plays: " + contadorJugadas+ " ";
+                        infoArriba[1].innerText = "Pairs found: " + contadorParejas + " ";
             }
     });
     backCards[i].style.backgroundImage = "url('" + backgrounds[i] + "')";
@@ -82,3 +102,4 @@ var delay = ( function() {
         timer = setTimeout(callback, ms);
     };
 })();
+

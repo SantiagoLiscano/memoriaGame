@@ -1,3 +1,52 @@
+body{
+    background-image: url('forestBackground.jpg');
+    background-size: cover;
+}
+#topName{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-bottom: 10px;
+}
+.woodBanner{
+    background-color: bisque;
+    border: outset 5px rgb(70, 54, 33);
+    padding: 0 20px;
+    border-radius: 5% 5% 25% 25%;
+    background-image: url('woodTop.jpg');
+    background-size: contain;
+    color: gainsboro;
+    font-style: italic;
+    font-variant: small-caps;
+    text-shadow: 2px 2px 1px black;
+    position: relative;
+    box-shadow: 10px 10px 40px black;
+    font-family: 'Metal Mania', cursive;
+    letter-spacing: 0.2vw;
+}
+.woodBanner::before{
+    content: '';
+    width: 10px;
+    height: 40px;
+    background-color: gray;
+    display: inline-block;
+    position: absolute;
+    top: -30px;
+    border-radius: 0 0 15% 15%;
+    box-shadow: 0px 5px 3px black;
+}
+.woodBanner::after{
+    content: '';
+    width: 10px;
+    height: 40px;
+    background-color: gray;
+    display: inline-block;
+    position: absolute;
+    top: -30px;
+    right: 20px;
+    border-radius: 0 0 15% 15%;
+    box-shadow: 0px 5px 3px black;
+}
 .card{
     display: inline-block;
     width: 100px;
@@ -50,8 +99,10 @@
     background-size: cover;
     background-repeat: no-repeat;
     border-radius: 10vw;
-    border: 10px solid rgb(39, 31, 21);
+    border: 10px outset rgb(39, 31, 21);
     overflow: hidden;
+    box-shadow: inset 10px 10px 30px rgb(37, 25, 14),
+                inset -10px -10px 20px rgb(37, 25, 14);
 }
 @media screen and (max-width: 2560px){
     #topName{
