@@ -23,29 +23,34 @@ body{
     box-shadow: 10px 10px 40px black;
     font-family: 'Metal Mania', cursive;
     letter-spacing: 0.2vw;
+    user-select: none;
 }
 .woodBanner::before{
     content: '';
     width: 10px;
     height: 40px;
-    background-color: gray;
+    /*background-color: gray;*/
     display: inline-block;
     position: absolute;
     top: -30px;
     border-radius: 0 0 15% 15%;
     box-shadow: 0px 5px 3px black;
+    background-image: url('chainTop.png');
+    background-size: cover;
 }
 .woodBanner::after{
     content: '';
     width: 10px;
     height: 40px;
-    background-color: gray;
+    /*background-color: gray;*/
     display: inline-block;
     position: absolute;
     top: -30px;
     right: 20px;
     border-radius: 0 0 15% 15%;
     box-shadow: 0px 5px 3px black;
+    background-image: url('chainTop.png');
+    background-size: cover;
 }
 .card{
     display: inline-block;
