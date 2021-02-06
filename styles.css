@@ -9,7 +9,6 @@ body{
     margin-bottom: 10px;
 }
 .woodBanner{
-    background-color: bisque;
     border: outset 5px rgb(70, 54, 33);
     padding: 0 20px;
     border-radius: 5% 5% 25% 25%;
@@ -86,12 +85,12 @@ body{
     position: absolute;
     backface-visibility: hidden;
 }
-.card > .side:nth-child(1){
+.card > .side:nth-child(2){
     background-image: url('backCard.png');
     background-size: contain;
     background-repeat: no-repeat;
 }
-.card > .side:nth-child(2){
+.card > .side:nth-child(1){
     background-image: url('1.png');
     background-size: contain;
     background-repeat: no-repeat;
@@ -109,6 +108,76 @@ body{
     box-shadow: inset 10px 10px 30px rgb(37, 25, 14),
                 inset -10px -10px 20px rgb(37, 25, 14);
 }
+
+.messageDiv{
+    position: absolute;
+    width: 450px;
+    height: 225px;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    background-color: red;
+    left: calc(50% - 225px);
+    top: calc(50% - 112.5px);
+    border: outset 5px rgb(70, 54, 33);
+    padding: 0 20px;
+    border-radius: 5% 5% 5% 5%;
+    background-image: url('woodTop.jpg');
+    background-size: contain;
+    color: gainsboro;
+    font-style: italic;
+    font-variant: small-caps;
+    text-shadow: 2px 2px 1px black;
+    font-family: 'Metal Mania', cursive;
+    letter-spacing: 0.2vw;
+    user-select: none;
+    text-align: center;
+    animation: win 1s ease;
+}
+.messageDivH2{
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+.messageDivInfo{
+    font-size: 1.5rem;
+    letter-spacing: initial;
+    margin-bottom: 0.5rem;
+}
+.btnWin{
+    background-color: rgb(158, 142, 121);
+    border: outset 5px rgb(70, 54, 33);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    padding: 5px 0;
+    border-radius: 5px;
+    cursor: pointer;
+    text-shadow: none;
+    color: black;
+}
+.btnWin:hover{
+    background-color: rgb(199, 178, 152);
+    color: black;
+    text-shadow: none;
+}
+@keyframes win{
+    0%{
+        transform: scale(0.01);
+        overflow: hidden;
+    }
+    50%{
+        transform: scale(1.3);
+        overflow: hidden;
+    }
+    100%{
+        transform: scale(1);
+        overflow: hidden;
+    }
+}
+
 @media screen and (max-width: 2560px){
     #topName{
         font-size: 16px;

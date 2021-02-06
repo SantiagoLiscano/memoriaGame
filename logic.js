@@ -5,7 +5,7 @@ var backgrounds = ["1.png", "2.png", "3.png", "4.png", "5.png", "6.png", "7.png"
 var cartasArriba = 0;
 var firstCard;
 var secondCard;
-var win=0;
+var win=14;
 var contadorJugadas= 0;
 var contadorParejas = 0;
 function sound(src) {
@@ -25,6 +25,7 @@ function sound(src) {
 var cardFlipSound = new sound("cardFlipSound.mp3");
 var cardFlipSound2 = new sound("cardFlipSound.mp3");
 var winSound = new sound("winSound.mp3");
+winSound.sound.volume = 0.5;
 backgrounds = shuffle(backgrounds);
 for (var i=0; i<cards.length; i++){
     cards[i].statusClick = 0;
@@ -63,8 +64,36 @@ for (var i=0; i<cards.length; i++){
                             cartasArriba=0;
                             win++;
                             if(win == 15){
-                                alert("YOU WON! it took you "+contadorJugadas+" plays to find the 15 pairs.");
-                                location.reload();
+                                /*alert("YOU WON! it took you "+contadorJugadas+" plays to find the 15 pairs.");
+                                location.reload();*/
+                                const messageDiv = document.createElement('div');
+                                const messageDivWrapper = document.createElement('div');
+                                const messageDivH2 = document.createElement('h2');
+                                const messageDivInfo = document.createElement('p');
+                                const body = document.body;
+                                const messageDivFragment = document.createDocumentFragment();
+                                const btnWin = document.createElement('div');
+                                messageDivWrapper.append(messageDivH2);
+                                messageDivH2.innerText= 'YOU WON!';
+                                messageDivWrapper.append(messageDivInfo);
+                                messageDivInfo.innerText ="it took you "+contadorJugadas+" plays to find the 15 pairs." ;
+                                btnWin.innerText = 'Play Again';
+                                btnWin.addEventListener("click", function(){
+                                    location.reload();
+                                })
+                                messageDivWrapper.append(btnWin);
+                                btnWin.classList.add('btnWin');
+                                messageDiv.append(messageDivWrapper);
+
+                                messageDivFragment.append(messageDiv);
+                                messageDiv.classList.add('messageDiv');
+                                messageDivH2.classList.add('messageDivH2');
+                                messageDivInfo.classList.add('messageDivInfo');
+                                body.append(messageDivFragment);
+                                winSound.play();
+                                                             
+
+
                             }
                             }, 1000 );
                         }else{                           
