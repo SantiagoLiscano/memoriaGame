@@ -25,8 +25,15 @@ function sound(src) {
 var cardFlipSound = new sound("cardFlipSound.mp3");
 var cardFlipSound2 = new sound("cardFlipSound.mp3");
 var winSound = new sound("winSound.mp3");
-winSound.sound.volume = 0.5;
+var pairSound = new sound("pairSound.mp3");
+pairSound.sound.volume = 0.25;
+/*var banquet = new sound("banquetUltraLow.mp3");
 backgrounds = shuffle(backgrounds);
+banquet.sound.volume = 0.1;
+banquet.sound.autoplay = true;
+banquet.sound.loop = true;
+banquet.play();*/
+winSound.sound.volume = 0.5;
 for (var i=0; i<cards.length; i++){
     cards[i].statusClick = 0;
     cards[i].addEventListener('click', function(){        
@@ -56,6 +63,7 @@ for (var i=0; i<cards.length; i++){
                             firstCard.classList.remove('flip');
                             firstCard.statusClick = 0;
                             secondCard.classList.add('goOut');
+                            pairSound.play();
                             firstCard.classList.add('goOut');
                             /*delay(function(){
                             secondCard.remove();
