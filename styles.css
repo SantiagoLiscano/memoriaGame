@@ -85,12 +85,12 @@ body{
     position: absolute;
     backface-visibility: hidden;
 }
-.card > .side:nth-child(2){
+.card > .side:nth-child(1){
     background-image: url('backCard.png');
     background-size: contain;
     background-repeat: no-repeat;
 }
-.card > .side:nth-child(1){
+.card > .side:nth-child(2){
     background-image: url('1.png');
     background-size: contain;
     background-repeat: no-repeat;

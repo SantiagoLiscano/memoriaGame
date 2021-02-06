@@ -5,7 +5,7 @@ var backgrounds = ["1.png", "2.png", "3.png", "4.png", "5.png", "6.png", "7.png"
 var cartasArriba = 0;
 var firstCard;
 var secondCard;
-var win=14;
+var win=0;
 var contadorJugadas= 0;
 var contadorParejas = 0;
 function sound(src) {
