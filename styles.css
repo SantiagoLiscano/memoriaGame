@@ -86,12 +86,11 @@ body{
     backface-visibility: hidden;
 }
 .card > .side:nth-child(1){
-    background-image: url('backCard.png');
+    background-image: url('backCard.jpg');
     background-size: contain;
     background-repeat: no-repeat;
 }
 .card > .side:nth-child(2){
-    background-image: url('1.png');
     background-size: contain;
     background-repeat: no-repeat;
     transform: rotateY(180deg)
