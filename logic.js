@@ -29,8 +29,9 @@ var pairSound = new sound("pairSound.mp3");
 var dingDong = new sound("dingDong.mp3");
 pairSound.sound.volume = 0.25;
 dingDong.sound.volume = 0.25;
-/*var banquet = new sound("banquetUltraLow.mp3");
+
 backgrounds = shuffle(backgrounds);
+/*var banquet = new sound("banquetUltraLow.mp3");
 banquet.sound.volume = 0.1;
 banquet.sound.autoplay = true;
 banquet.sound.loop = true;
